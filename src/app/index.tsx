@@ -1,10 +1,10 @@
-import TodoItem from "@/components/todoItem";
-import useTodos from "@/hooks/useTodos";
-import { TodoItemType } from "@/types";
-import { ActivityIndicator, Text, View } from "react-native";
+import AddTask from "@/components/AddTask";
+import TaskList from "@/components/TaskList";
+import useTasks from "@/hooks/useTasks";
+import { ActivityIndicator, Image, Text, View } from "react-native";
 
 export default function Index() {
-  const { todos, error, loading } = useTodos();
+  const { tasks, error, loading, addTask, updateTask, deleteTask } = useTasks();
 
   if (loading) {
     return (
@@ -16,7 +16,7 @@ export default function Index() {
         }}
       >
         <ActivityIndicator size="large" color="#0000ff" />
-        <Text style={{ marginTop: 10 }}>Loading todos...</Text>
+        <Text style={{ marginTop: 10 }}>Loading tasks...</Text>
       </View>
     );
   }
@@ -25,21 +25,24 @@ export default function Index() {
     <View
       style={{
         flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
+        padding: 16,
       }}
     >
-      <View>
-        {error ? (
-          <Text style={{ color: "red", textAlign: "center" }}>{error}</Text>
-        ) : todos.length > 0 ? (
-          todos.map((todo: TodoItemType) => {
-            return <TodoItem key={todo.id} id={todo.id} todo={todo.todo} />;
-          })
-        ) : (
-          <Text>There are no tasks</Text>
-        )}
+      <View style={{ alignItems: "center", marginBottom: 20 }}>
+        <Image
+          source={require("../../assets/images/unnamed.gif")}
+          style={{ width: 50, height: 50 }}
+        />
       </View>
+
+      <AddTask onAddTask={addTask} />
+
+      <TaskList
+        tasks={tasks}
+        error={error}
+        onDelete={deleteTask}
+        onEdit={updateTask}
+      />
     </View>
   );
 }

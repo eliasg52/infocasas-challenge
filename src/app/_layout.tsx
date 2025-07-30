@@ -3,7 +3,7 @@ import { Stack } from "expo-router";
 export default function RootLayout() {
   return (
     <Stack>
-      <Stack.Screen name="index" options={{ title: "Todo List" }} />
+      <Stack.Screen name="index" options={{ title: "Task Manager" }} />
     </Stack>
   );
 }

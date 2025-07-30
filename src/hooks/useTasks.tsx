@@ -21,6 +21,10 @@ const useTasks = () => {
 
   const saveTasksToStorage = async (tasks: TaskItemType[]): Promise<void> => {
     try {
+      if (tasks === undefined || tasks === null) {
+        console.warn("Attempting to save undefined/null tasks");
+        return;
+      }
       await AsyncStorage.setItem("tasks", JSON.stringify(tasks));
     } catch (error) {
       console.error("Error saving tasks to storage:", error);
@@ -40,6 +44,8 @@ const useTasks = () => {
   };
 
   const addTask = async (taskText: string) => {
+    console.log("Adding task with text:", taskText);
+
     const newTask: TaskItemType = {
       id: Date.now(), // Generar ID único como number
       task: taskText,
@@ -47,7 +53,11 @@ const useTasks = () => {
       userId: 1, // Valor por defecto
     };
 
+    console.log("Created new task:", newTask);
+
     const updatedTasks = [...tasks, newTask];
+    console.log("Updated tasks array:", updatedTasks);
+
     setTasks(updatedTasks);
     await saveTasksToStorage(updatedTasks);
   };
