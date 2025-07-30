@@ -33,7 +33,6 @@ export default function Index() {
 
   return (
     <View style={styles.container}>
-      {/* Header con gradiente */}
       <LinearGradient colors={["#FF6B35", "#FF8C42"]} style={styles.header}>
         <View style={styles.headerContent}>
           <View style={styles.logoContainer}>
@@ -46,7 +45,6 @@ export default function Index() {
         </View>
       </LinearGradient>
 
-      {/* Contenido principal */}
       <View style={styles.content}>
         <AddTask onAddTask={addTask} />
         <TaskList
