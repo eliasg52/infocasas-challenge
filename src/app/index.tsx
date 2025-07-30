@@ -4,7 +4,15 @@ import useTasks from "@/hooks/useTasks";
 import { ActivityIndicator, Image, Text, View } from "react-native";
 
 export default function Index() {
-  const { tasks, error, loading, addTask, updateTask, deleteTask } = useTasks();
+  const {
+    tasks,
+    error,
+    loading,
+    addTask,
+    updateTask,
+    toggleTaskCompletion,
+    deleteTask,
+  } = useTasks();
 
   if (loading) {
     return (
@@ -42,6 +50,7 @@ export default function Index() {
         error={error}
         onDelete={deleteTask}
         onEdit={updateTask}
+        onToggle={toggleTaskCompletion}
       />
     </View>
   );

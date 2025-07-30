@@ -2,10 +2,27 @@ import { TaskItemProps } from "@/types";
 import { Ionicons } from "@expo/vector-icons";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-const TaskItem: React.FC<TaskItemProps> = ({ id, task, onDelete, onEdit }) => {
+const TaskItem: React.FC<TaskItemProps> = ({
+  id,
+  task,
+  completed,
+  onDelete,
+  onEdit,
+  onToggle,
+}) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.taskText}>{task}</Text>
+      <TouchableOpacity
+        style={styles.taskContainer}
+        onPress={() => onToggle(id)}
+      >
+        <View style={[styles.checkbox, completed && styles.checkboxCompleted]}>
+          {completed && <Ionicons name="checkmark" size={16} color="white" />}
+        </View>
+        <Text style={[styles.taskText, completed && styles.taskTextCompleted]}>
+          {task}
+        </Text>
+      </TouchableOpacity>
       <View style={styles.buttonContainer}>
         <TouchableOpacity
           style={styles.editButton}
@@ -42,11 +59,33 @@ const styles = StyleSheet.create({
     shadowRadius: 2,
     elevation: 2,
   },
+  taskContainer: {
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "center",
+    marginRight: 12,
+  },
+  checkbox: {
+    width: 20,
+    height: 20,
+    borderRadius: 4,
+    borderWidth: 2,
+    borderColor: "#007AFF",
+    marginRight: 12,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  checkboxCompleted: {
+    backgroundColor: "#007AFF",
+  },
   taskText: {
     flex: 1,
     fontSize: 16,
     color: "#333",
-    marginRight: 12,
+  },
+  taskTextCompleted: {
+    textDecorationLine: "line-through",
+    color: "#999",
   },
   buttonContainer: {
     flexDirection: "row",

@@ -6,7 +6,12 @@ export interface TaskItemType {
 }
 
 export interface TaskApiResponse {
-  tasks: TaskItemType[];
+  todos: {
+    id: number;
+    todo: string;
+    completed: boolean;
+    userId: number;
+  }[];
   total: number;
   skip: number;
   limit: number;
@@ -21,13 +26,16 @@ export interface TaskListProps {
   error: string | null;
   onDelete: (id: number) => void;
   onEdit: (id: number, currentText: string) => void;
+  onToggle: (id: number) => void;
 }
 
 export interface TaskItemProps {
   id: number;
   task: string;
+  completed?: boolean;
   onDelete: (id: number) => void;
   onEdit: (id: number, currentText: string) => void;
+  onToggle: (id: number) => void;
 }
 
 export interface EditTaskModalProps {
@@ -35,4 +43,16 @@ export interface EditTaskModalProps {
   taskText: string;
   onSave: (newText: string) => void;
   onCancel: () => void;
+}
+
+export type FilterType = "all" | "completed" | "pending";
+
+export interface TaskFilterProps {
+  currentFilter: FilterType;
+  onFilterChange: (filter: FilterType) => void;
+}
+
+export interface TaskSearchProps {
+  searchText: string;
+  onSearchChange: (text: string) => void;
 }

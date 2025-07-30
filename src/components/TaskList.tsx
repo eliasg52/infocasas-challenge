@@ -1,20 +1,25 @@
-import { TaskItemType, TaskListProps } from "@/types";
-import React, { useState } from "react";
+import { FilterType, TaskItemType, TaskListProps } from "@/types";
+import React, { useMemo, useState } from "react";
 import { FlatList, StyleSheet, Text, View } from "react-native";
 import EditTaskModal from "./EditTaskModal";
+import TaskFilter from "./TaskFilter";
 import TaskItem from "./TaskItem";
+import TaskSearch from "./TaskSearch";
 
 const TaskList: React.FC<TaskListProps> = ({
   tasks,
   error,
   onDelete,
   onEdit,
+  onToggle,
 }) => {
   const [editModalVisible, setEditModalVisible] = useState(false);
   const [editingTask, setEditingTask] = useState<{
     id: number;
     text: string;
   } | null>(null);
+  const [currentFilter, setCurrentFilter] = useState<FilterType>("all");
+  const [searchText, setSearchText] = useState("");
 
   const handleEditPress = (id: number, currentText: string) => {
     setEditingTask({ id, text: currentText });
@@ -34,19 +39,51 @@ const TaskList: React.FC<TaskListProps> = ({
     setEditingTask(null);
   };
 
+  const filteredAndSearchedTasks = useMemo(() => {
+    let filteredTasks = tasks;
+    switch (currentFilter) {
+      case "completed":
+        filteredTasks = tasks.filter((task) => task.completed);
+        break;
+      case "pending":
+        filteredTasks = tasks.filter((task) => !task.completed);
+        break;
+      default:
+        filteredTasks = tasks;
+    }
+
+    if (searchText.trim()) {
+      filteredTasks = filteredTasks.filter((task) =>
+        task.task.toLowerCase().includes(searchText.toLowerCase())
+      );
+    }
+
+    return filteredTasks;
+  }, [tasks, currentFilter, searchText]);
+
   const renderTaskItem = ({ item }: { item: TaskItemType }) => (
     <TaskItem
       key={item.id}
       id={item.id!}
       task={item.task}
+      completed={item.completed}
       onDelete={onDelete}
       onEdit={handleEditPress}
+      onToggle={onToggle}
     />
   );
 
   const renderEmptyComponent = () => (
     <View style={styles.emptyContainer}>
-      <Text style={styles.emptyText}>There are no tasks</Text>
+      <Text style={styles.emptyText}>
+        {searchText.trim()
+          ? "No tasks found matching your search"
+          : currentFilter === "all"
+          ? "There are no tasks"
+          : currentFilter === "completed"
+          ? "No completed tasks"
+          : "No pending tasks"}
+      </Text>
     </View>
   );
 
@@ -60,8 +97,13 @@ const TaskList: React.FC<TaskListProps> = ({
 
   return (
     <>
+      <TaskSearch searchText={searchText} onSearchChange={setSearchText} />
+      <TaskFilter
+        currentFilter={currentFilter}
+        onFilterChange={setCurrentFilter}
+      />
       <FlatList
-        data={tasks}
+        data={filteredAndSearchedTasks}
         renderItem={renderTaskItem}
         keyExtractor={(item) => item.id?.toString() || item.task}
         ListEmptyComponent={renderEmptyComponent}
