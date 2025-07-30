@@ -1,7 +1,13 @@
 import { FilterType, TaskFilterProps } from "@/types";
 import { Ionicons } from "@expo/vector-icons";
 import React from "react";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  Platform,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 
 const TaskFilter: React.FC<TaskFilterProps> = ({
   currentFilter,
@@ -39,7 +45,7 @@ const TaskFilter: React.FC<TaskFilterProps> = ({
             currentFilter === "all" && styles.activeFilterText,
           ]}
         >
-          Todas
+          All
         </Text>
       </TouchableOpacity>
       <TouchableOpacity
@@ -61,7 +67,7 @@ const TaskFilter: React.FC<TaskFilterProps> = ({
             currentFilter === "completed" && styles.activeFilterText,
           ]}
         >
-          Completadas
+          Completed
         </Text>
       </TouchableOpacity>
     </View>
@@ -72,10 +78,10 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     paddingHorizontal: 16,
-    paddingVertical: 12,
+    paddingVertical: Platform.OS === "web" ? 16 : 12,
     backgroundColor: "white",
     borderRadius: 12,
-    marginBottom: 16,
+    marginBottom: Platform.OS === "web" ? 24 : 16,
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
@@ -90,8 +96,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    paddingVertical: 12,
-    paddingHorizontal: 12,
+    paddingVertical: Platform.OS === "web" ? 16 : 12,
+    paddingHorizontal: Platform.OS === "web" ? 16 : 12,
     borderRadius: 8,
     marginHorizontal: 4,
   },
@@ -110,7 +116,7 @@ const styles = StyleSheet.create({
     marginRight: 8,
   },
   filterText: {
-    fontSize: 14,
+    fontSize: Platform.OS === "web" ? 16 : 14,
     fontWeight: "600",
     color: "#666",
     flexShrink: 1,

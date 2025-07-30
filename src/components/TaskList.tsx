@@ -1,6 +1,6 @@
 import { FilterType, TaskItemType, TaskListProps } from "@/types";
 import React, { useMemo, useState } from "react";
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import { FlatList, Platform, StyleSheet, Text, View } from "react-native";
 import EditTaskModal from "./EditTaskModal";
 import TaskFilter from "./TaskFilter";
 import TaskItem from "./TaskItem";
@@ -74,10 +74,10 @@ const TaskList: React.FC<TaskListProps> = ({
     <View style={styles.emptyContainer}>
       <Text style={styles.emptyText}>
         {searchText.trim()
-          ? "No se encontraron tareas que coincidan con tu búsqueda"
+          ? "No tasks found matching your search"
           : currentFilter === "all"
-          ? "No hay tareas"
-          : "No hay tareas completadas"}
+          ? "There are no tasks"
+          : "No completed tasks"}
       </Text>
     </View>
   );
@@ -102,7 +102,7 @@ const TaskList: React.FC<TaskListProps> = ({
         renderItem={renderTaskItem}
         keyExtractor={(item) => item.id?.toString() || item.task}
         ListEmptyComponent={renderEmptyComponent}
-        showsVerticalScrollIndicator={false}
+        showsVerticalScrollIndicator={Platform.OS === "web"}
         contentContainerStyle={styles.listContainer}
         style={styles.flatList}
       />
@@ -122,16 +122,16 @@ const styles = StyleSheet.create({
   },
   listContainer: {
     flexGrow: 1,
-    paddingBottom: 50,
+    paddingBottom: Platform.OS === "web" ? 40 : 50,
   },
   emptyContainer: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    paddingVertical: 40,
+    paddingVertical: Platform.OS === "web" ? 60 : 40,
   },
   emptyText: {
-    fontSize: 16,
+    fontSize: Platform.OS === "web" ? 18 : 16,
     color: "#666",
     textAlign: "center",
   },
@@ -139,10 +139,10 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    paddingVertical: 40,
+    paddingVertical: Platform.OS === "web" ? 60 : 40,
   },
   errorText: {
-    fontSize: 16,
+    fontSize: Platform.OS === "web" ? 18 : 16,
     color: "red",
     textAlign: "center",
   },

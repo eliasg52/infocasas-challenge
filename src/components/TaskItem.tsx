@@ -1,6 +1,12 @@
 import { TaskItemProps } from "@/types";
 import { Ionicons } from "@expo/vector-icons";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  Platform,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 
 const TaskItem: React.FC<TaskItemProps> = ({
   id,
@@ -48,8 +54,8 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     backgroundColor: "white",
     borderRadius: 12,
-    padding: 16,
-    marginVertical: 6,
+    padding: Platform.OS === "web" ? 20 : 16,
+    marginVertical: Platform.OS === "web" ? 8 : 6,
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
@@ -66,8 +72,8 @@ const styles = StyleSheet.create({
     marginRight: 12,
   },
   checkbox: {
-    width: 24,
-    height: 24,
+    width: Platform.OS === "web" ? 28 : 24,
+    height: Platform.OS === "web" ? 28 : 24,
     borderRadius: 6,
     borderWidth: 2,
     borderColor: "#FF6B35",
@@ -80,7 +86,7 @@ const styles = StyleSheet.create({
   },
   taskText: {
     flex: 1,
-    fontSize: 16,
+    fontSize: Platform.OS === "web" ? 18 : 16,
     color: "#333",
     fontWeight: "500",
   },
@@ -90,15 +96,15 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     flexDirection: "row",
-    gap: 8,
+    gap: Platform.OS === "web" ? 12 : 8,
   },
   editButton: {
-    padding: 8,
+    padding: Platform.OS === "web" ? 12 : 8,
     borderRadius: 8,
     backgroundColor: "#FFF3E0",
   },
   deleteButton: {
-    padding: 8,
+    padding: Platform.OS === "web" ? 12 : 8,
     borderRadius: 8,
     backgroundColor: "#FFEBEE",
   },

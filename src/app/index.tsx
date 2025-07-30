@@ -3,7 +3,13 @@ import TaskList from "@/components/TaskList";
 import useTasks from "@/hooks/useTasks";
 import { Ionicons } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
-import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
+import {
+  ActivityIndicator,
+  Platform,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 
 export default function Index() {
   const {
@@ -20,13 +26,14 @@ export default function Index() {
     return (
       <View style={styles.loadingContainer}>
         <ActivityIndicator size="large" color="#FF6B35" />
-        <Text style={styles.loadingText}>Cargando tareas...</Text>
+        <Text style={styles.loadingText}>Loading tasks...</Text>
       </View>
     );
   }
 
   return (
     <View style={styles.container}>
+      {/* Header con gradiente */}
       <LinearGradient colors={["#FF6B35", "#FF8C42"]} style={styles.header}>
         <View style={styles.headerContent}>
           <View style={styles.logoContainer}>
@@ -34,11 +41,12 @@ export default function Index() {
             <Text style={styles.logoText}>TaskManager</Text>
           </View>
           <Text style={styles.headerSubtitle}>
-            Organiza tus tareas de manera eficiente
+            Organize your tasks efficiently
           </Text>
         </View>
       </LinearGradient>
 
+      {/* Contenido principal */}
       <View style={styles.content}>
         <AddTask onAddTask={addTask} />
         <TaskList
@@ -57,12 +65,25 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#F8F9FA",
+    ...(Platform.OS === "web" && {
+      maxWidth: 800,
+      alignSelf: "center" as const,
+      width: "100%",
+      minHeight: "100vh" as any,
+      paddingHorizontal: 20,
+    }),
   },
   loadingContainer: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#F8F9FA",
+    ...(Platform.OS === "web" && {
+      maxWidth: 800,
+      alignSelf: "center" as const,
+      width: "100%",
+      minHeight: "100vh" as any,
+    }),
   },
   loadingText: {
     marginTop: 16,
@@ -71,9 +92,10 @@ const styles = StyleSheet.create({
     fontWeight: "500",
   },
   header: {
-    paddingTop: 60,
-    paddingBottom: 30,
-    paddingHorizontal: 20,
+    paddingTop: Platform.OS === "web" ? 40 : 60,
+    paddingBottom: Platform.OS === "web" ? 40 : 30,
+    paddingHorizontal: Platform.OS === "web" ? 0 : 20,
+    marginBottom: Platform.OS === "web" ? 30 : 0,
   },
   headerContent: {
     alignItems: "center",
@@ -84,20 +106,20 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   logoText: {
-    fontSize: 28,
+    fontSize: Platform.OS === "web" ? 32 : 28,
     fontWeight: "bold",
     color: "white",
     marginLeft: 12,
   },
   headerSubtitle: {
-    fontSize: 16,
+    fontSize: Platform.OS === "web" ? 18 : 16,
     color: "white",
     opacity: 0.9,
     textAlign: "center",
   },
   content: {
     flex: 1,
-    paddingHorizontal: 16,
-    paddingTop: 20,
+    paddingHorizontal: Platform.OS === "web" ? 0 : 16,
+    paddingTop: Platform.OS === "web" ? 0 : 20,
   },
 });

@@ -1,7 +1,13 @@
 import { TaskSearchProps } from "@/types";
 import { Ionicons } from "@expo/vector-icons";
 import React from "react";
-import { StyleSheet, TextInput, TouchableOpacity, View } from "react-native";
+import {
+  Platform,
+  StyleSheet,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from "react-native";
 
 const TaskSearch: React.FC<TaskSearchProps> = ({
   searchText,
@@ -20,7 +26,7 @@ const TaskSearch: React.FC<TaskSearchProps> = ({
           style={styles.searchInput}
           value={searchText}
           onChangeText={onSearchChange}
-          placeholder="Buscar tareas..."
+          placeholder="Search tasks..."
           placeholderTextColor="#999"
         />
         {searchText.length > 0 && (
@@ -39,7 +45,7 @@ const TaskSearch: React.FC<TaskSearchProps> = ({
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 16,
-    paddingVertical: 8,
+    paddingVertical: Platform.OS === "web" ? 12 : 8,
   },
   searchContainer: {
     flexDirection: "row",
@@ -47,7 +53,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     borderRadius: 12,
     paddingHorizontal: 16,
-    paddingVertical: 12,
+    paddingVertical: Platform.OS === "web" ? 16 : 12,
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
@@ -62,13 +68,13 @@ const styles = StyleSheet.create({
   },
   searchInput: {
     flex: 1,
-    fontSize: 16,
+    fontSize: Platform.OS === "web" ? 18 : 16,
     color: "#333",
-    paddingVertical: 4,
+    paddingVertical: Platform.OS === "web" ? 8 : 4,
   },
   clearButton: {
     marginLeft: 8,
-    padding: 4,
+    padding: Platform.OS === "web" ? 8 : 4,
   },
 });
 

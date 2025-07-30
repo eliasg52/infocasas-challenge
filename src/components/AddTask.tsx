@@ -1,7 +1,13 @@
 import { AddTaskProps } from "@/types";
 import { Ionicons } from "@expo/vector-icons";
 import React, { useState } from "react";
-import { StyleSheet, TextInput, TouchableOpacity, View } from "react-native";
+import {
+  Platform,
+  StyleSheet,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from "react-native";
 
 const AddTask: React.FC<AddTaskProps> = ({ onAddTask }) => {
   const [taskText, setTaskText] = useState("");
@@ -26,7 +32,7 @@ const AddTask: React.FC<AddTaskProps> = ({ onAddTask }) => {
           style={styles.input}
           value={taskText}
           onChangeText={setTaskText}
-          placeholder="Agregar una nueva tarea..."
+          placeholder="Add a new task..."
           placeholderTextColor="#999"
         />
         <TouchableOpacity
@@ -43,7 +49,7 @@ const AddTask: React.FC<AddTaskProps> = ({ onAddTask }) => {
 
 const styles = StyleSheet.create({
   container: {
-    marginBottom: 20,
+    marginBottom: Platform.OS === "web" ? 24 : 20,
   },
   inputContainer: {
     flexDirection: "row",
@@ -51,7 +57,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     borderRadius: 12,
     paddingHorizontal: 16,
-    paddingVertical: 12,
+    paddingVertical: Platform.OS === "web" ? 16 : 12,
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
@@ -66,13 +72,13 @@ const styles = StyleSheet.create({
   },
   input: {
     flex: 1,
-    fontSize: 16,
+    fontSize: Platform.OS === "web" ? 18 : 16,
     color: "#333",
-    paddingVertical: 8,
+    paddingVertical: Platform.OS === "web" ? 12 : 8,
   },
   button: {
     backgroundColor: "#FF6B35",
-    padding: 12,
+    padding: Platform.OS === "web" ? 16 : 12,
     borderRadius: 8,
     marginLeft: 12,
     shadowColor: "#FF6B35",

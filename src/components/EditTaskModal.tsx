@@ -27,7 +27,7 @@ const EditTaskModal: React.FC<EditTaskModalProps> = ({
     if (editText.trim()) {
       onSave(editText.trim());
     } else {
-      Alert.alert("Error", "El texto de la tarea no puede estar vacío");
+      Alert.alert("Error", "Task text cannot be empty");
     }
   };
 
@@ -42,14 +42,14 @@ const EditTaskModal: React.FC<EditTaskModalProps> = ({
         <View style={styles.modalContainer}>
           <View style={styles.header}>
             <Ionicons name="pencil" size={24} color="#FF6B35" />
-            <Text style={styles.title}>Editar tarea</Text>
+            <Text style={styles.title}>Edit task</Text>
           </View>
 
           <TextInput
             style={styles.input}
             value={editText}
             onChangeText={setEditText}
-            placeholder="Ingresa el nuevo texto..."
+            placeholder="Enter new text..."
             placeholderTextColor="#999"
             autoFocus={true}
             multiline={true}
@@ -58,7 +58,7 @@ const EditTaskModal: React.FC<EditTaskModalProps> = ({
 
           <View style={styles.buttonContainer}>
             <TouchableOpacity style={styles.cancelButton} onPress={onCancel}>
-              <Text style={styles.cancelButtonText}>Cancelar</Text>
+              <Text style={styles.cancelButtonText}>Cancel</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.saveButton} onPress={handleSave}>
               <Ionicons
@@ -67,7 +67,7 @@ const EditTaskModal: React.FC<EditTaskModalProps> = ({
                 color="white"
                 style={styles.saveIcon}
               />
-              <Text style={styles.saveButtonText}>Guardar</Text>
+              <Text style={styles.saveButtonText}>Save</Text>
             </TouchableOpacity>
           </View>
         </View>
