@@ -1,12 +1,12 @@
-export interface TodoItem {
-  id: number;
+export interface TodoItemType {
+  id?: number;
   todo: string;
-  completed: boolean;
-  userId: number;
+  completed?: boolean;
+  userId?: number;
 }
 
 export interface TodoApiResponse {
-  todos: TodoItem[];
+  todos: TodoItemType[];
   total: number;
   skip: number;
   limit: number;

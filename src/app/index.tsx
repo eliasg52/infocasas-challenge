@@ -1,6 +1,7 @@
+import TodoItem from "@/components/todoItem";
+import useTodos from "@/hooks/useTodos";
+import { TodoItemType } from "@/types";
 import { Text, View } from "react-native";
-import { TodoItem } from "../types";
-import useTodos from "../hooks/useTodos";
 
 export default function Index() {
   const { todos } = useTodos();
@@ -15,12 +16,8 @@ export default function Index() {
     >
       <View>
         {todos.length > 0 ? (
-          todos.map(({ todo, id }: TodoItem) => {
-            return (
-              <View key={id}>
-                <Text>{todo}</Text>
-              </View>
-            );
+          todos.map((todo: TodoItemType) => {
+            return <TodoItem key={todo.id} id={todo.id} todo={todo.todo} />;
           })
         ) : (
           <Text>There is no tasks</Text>

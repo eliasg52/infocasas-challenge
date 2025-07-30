@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { TodoItem, TodoApiResponse } from "../types";
+import { TodoItemType, TodoApiResponse } from "@/types";
 
 const useTodos = () => {
-  const [todos, setTodos] = useState<TodoItem[]>([]);
+  const [todos, setTodos] = useState<TodoItemType[]>([]);
 
   const apiUrl = process.env.EXPO_PUBLIC_API_URL;
 
