@@ -8,28 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		181D5B641E4BA52983FF2104 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = DF3568880D09D328F317E58B /* PrivacyInfo.xcprivacy */; };
+		271175F89762FB924A6BB155 /* libPods-TaskManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A6379B4D3DAF511B48D16411 /* libPods-TaskManager.a */; };
 		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
-		9E4A97DA2E090AFF912D303A /* libPods-icchallenge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A9B210E4E8085A9A7055FCD /* libPods-icchallenge.a */; };
+		854016727D9B23408D86996B /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EB5A1956A1526636C4BF1E /* ExpoModulesProvider.swift */; };
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
-		DB19B1498DC03C2524E64B83 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE4F249927B38C0D264F6BB /* ExpoModulesProvider.swift */; };
 		F11748422D0307B40044C1D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11748412D0307B40044C1D9 /* AppDelegate.swift */; };
-		F9870A739B0184FF4B442070 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 00012928FB83A785DD81CA60 /* PrivacyInfo.xcprivacy */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		00012928FB83A785DD81CA60 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = icchallenge/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* icchallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = icchallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = icchallenge/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = icchallenge/Info.plist; sourceTree = "<group>"; };
-		2FE4F249927B38C0D264F6BB /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-icchallenge/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
-		3A9B210E4E8085A9A7055FCD /* libPods-icchallenge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-icchallenge.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = icchallenge/SplashScreen.storyboard; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* TaskManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = TaskManager/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = TaskManager/Info.plist; sourceTree = "<group>"; };
+		26EB5A1956A1526636C4BF1E /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-TaskManager/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
+		9FD8D533410BA17D33A67833 /* Pods-TaskManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskManager.debug.xcconfig"; path = "Target Support Files/Pods-TaskManager/Pods-TaskManager.debug.xcconfig"; sourceTree = "<group>"; };
+		A6379B4D3DAF511B48D16411 /* libPods-TaskManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TaskManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = TaskManager/SplashScreen.storyboard; sourceTree = "<group>"; };
 		BB2F792C24A3F905000567C9 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
-		E3C23B41199AAF1FBB9E799E /* Pods-icchallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-icchallenge.release.xcconfig"; path = "Target Support Files/Pods-icchallenge/Pods-icchallenge.release.xcconfig"; sourceTree = "<group>"; };
+		D6E3E117879F89B578C07FCB /* Pods-TaskManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskManager.release.xcconfig"; path = "Target Support Files/Pods-TaskManager/Pods-TaskManager.release.xcconfig"; sourceTree = "<group>"; };
+		DF3568880D09D328F317E58B /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = TaskManager/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		F11748412D0307B40044C1D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = icchallenge/AppDelegate.swift; sourceTree = "<group>"; };
-		F11748442D0722820044C1D9 /* icchallenge-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "icchallenge-Bridging-Header.h"; path = "icchallenge/icchallenge-Bridging-Header.h"; sourceTree = "<group>"; };
-		F9E38C64D73F9EF5C9AFE9A4 /* Pods-icchallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-icchallenge.debug.xcconfig"; path = "Target Support Files/Pods-icchallenge/Pods-icchallenge.debug.xcconfig"; sourceTree = "<group>"; };
+		F11748412D0307B40044C1D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = TaskManager/AppDelegate.swift; sourceTree = "<group>"; };
+		F11748442D0722820044C1D9 /* TaskManager-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "TaskManager-Bridging-Header.h"; path = "TaskManager/TaskManager-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,42 +37,44 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E4A97DA2E090AFF912D303A /* libPods-icchallenge.a in Frameworks */,
+				271175F89762FB924A6BB155 /* libPods-TaskManager.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		13B07FAE1A68108700A75B9A /* icchallenge */ = {
+		13B07FAE1A68108700A75B9A /* TaskManager */ = {
 			isa = PBXGroup;
 			children = (
 				F11748412D0307B40044C1D9 /* AppDelegate.swift */,
-				F11748442D0722820044C1D9 /* icchallenge-Bridging-Header.h */,
+				F11748442D0722820044C1D9 /* TaskManager-Bridging-Header.h */,
 				BB2F792B24A3F905000567C9 /* Supporting */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */,
-				00012928FB83A785DD81CA60 /* PrivacyInfo.xcprivacy */,
+				DF3568880D09D328F317E58B /* PrivacyInfo.xcprivacy */,
 			);
-			name = icchallenge;
-			sourceTree = "<group>";
-		};
-		1530D5CA568F115E915425CC /* ExpoModulesProviders */ = {
-			isa = PBXGroup;
-			children = (
-				936D35D18921B01E4D7EEF9D /* icchallenge */,
-			);
-			name = ExpoModulesProviders;
+			name = TaskManager;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				3A9B210E4E8085A9A7055FCD /* libPods-icchallenge.a */,
+				A6379B4D3DAF511B48D16411 /* libPods-TaskManager.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		62B94274E6B41FD54F96D4B1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9FD8D533410BA17D33A67833 /* Pods-TaskManager.debug.xcconfig */,
+				D6E3E117879F89B578C07FCB /* Pods-TaskManager.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -85,12 +87,12 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* icchallenge */,
+				13B07FAE1A68108700A75B9A /* TaskManager */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				A243E8F5D7302FFFB555CB20 /* Pods */,
-				1530D5CA568F115E915425CC /* ExpoModulesProviders */,
+				62B94274E6B41FD54F96D4B1 /* Pods */,
+				A7D5E4C97C16BDDCF05D1BF1 /* ExpoModulesProviders */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -100,27 +102,25 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* icchallenge.app */,
+				13B07F961A680F5B00A75B9A /* TaskManager.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		936D35D18921B01E4D7EEF9D /* icchallenge */ = {
+		929992C11EA2A039E8426C22 /* TaskManager */ = {
 			isa = PBXGroup;
 			children = (
-				2FE4F249927B38C0D264F6BB /* ExpoModulesProvider.swift */,
+				26EB5A1956A1526636C4BF1E /* ExpoModulesProvider.swift */,
 			);
-			name = icchallenge;
+			name = TaskManager;
 			sourceTree = "<group>";
 		};
-		A243E8F5D7302FFFB555CB20 /* Pods */ = {
+		A7D5E4C97C16BDDCF05D1BF1 /* ExpoModulesProviders */ = {
 			isa = PBXGroup;
 			children = (
-				F9E38C64D73F9EF5C9AFE9A4 /* Pods-icchallenge.debug.xcconfig */,
-				E3C23B41199AAF1FBB9E799E /* Pods-icchallenge.release.xcconfig */,
+				929992C11EA2A039E8426C22 /* TaskManager */,
 			);
-			name = Pods;
-			path = Pods;
+			name = ExpoModulesProviders;
 			sourceTree = "<group>";
 		};
 		BB2F792B24A3F905000567C9 /* Supporting */ = {
@@ -129,32 +129,32 @@
 				BB2F792C24A3F905000567C9 /* Expo.plist */,
 			);
 			name = Supporting;
-			path = icchallenge/Supporting;
+			path = TaskManager/Supporting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		13B07F861A680F5B00A75B9A /* icchallenge */ = {
+		13B07F861A680F5B00A75B9A /* TaskManager */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "icchallenge" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "TaskManager" */;
 			buildPhases = (
 				08A4A3CD28434E44B6B9DE2E /* [CP] Check Pods Manifest.lock */,
-				2DE75B47352AD1BFD5C270EB /* [Expo] Configure project */,
+				77BB35912525CCF1D57A79C6 /* [Expo] Configure project */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				800E24972A6A228C8D4807E9 /* [CP] Copy Pods Resources */,
-				BEDC0A390BAD663F77B2F458 /* [CP] Embed Pods Frameworks */,
+				44CC64E056F4C7FB911761D5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = icchallenge;
-			productName = icchallenge;
-			productReference = 13B07F961A680F5B00A75B9A /* icchallenge.app */;
+			name = TaskManager;
+			productName = TaskManager;
+			productReference = 13B07F961A680F5B00A75B9A /* TaskManager.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -170,7 +170,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "icchallenge" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "TaskManager" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -183,7 +183,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* icchallenge */,
+				13B07F861A680F5B00A75B9A /* TaskManager */,
 			);
 		};
 /* End PBXProject section */
@@ -196,7 +196,7 @@
 				BB2F792D24A3F905000567C9 /* Expo.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */,
-				F9870A739B0184FF4B442070 /* PrivacyInfo.xcprivacy in Resources */,
+				181D5B641E4BA52983FF2104 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,14 +233,32 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-icchallenge-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-TaskManager-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2DE75B47352AD1BFD5C270EB /* [Expo] Configure project */ = {
+		44CC64E056F4C7FB911761D5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TaskManager/Pods-TaskManager-frameworks.sh",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/hermes-engine/Pre-built/hermes.framework/hermes",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/hermes.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TaskManager/Pods-TaskManager-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		77BB35912525CCF1D57A79C6 /* [Expo] Configure project */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -257,7 +275,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# This script configures Expo modules and generates the modules provider file.\nbash -l -c \"./Pods/Target\\ Support\\ Files/Pods-icchallenge/expo-configure-project.sh\"\n";
+			shellScript = "# This script configures Expo modules and generates the modules provider file.\nbash -l -c \"./Pods/Target\\ Support\\ Files/Pods-TaskManager/expo-configure-project.sh\"\n";
 		};
 		800E24972A6A228C8D4807E9 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -265,7 +283,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-icchallenge/Pods-icchallenge-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-TaskManager/Pods-TaskManager-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/EXConstants/EXConstants.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/EXConstants/ExpoConstants_privacy.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/ExpoFileSystem/ExpoFileSystem_privacy.bundle",
@@ -294,25 +312,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-icchallenge/Pods-icchallenge-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BEDC0A390BAD663F77B2F458 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-icchallenge/Pods-icchallenge-frameworks.sh",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/hermes-engine/Pre-built/hermes.framework/hermes",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/hermes.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-icchallenge/Pods-icchallenge-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TaskManager/Pods-TaskManager-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -323,7 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F11748422D0307B40044C1D9 /* AppDelegate.swift in Sources */,
-				DB19B1498DC03C2524E64B83 /* ExpoModulesProvider.swift in Sources */,
+				854016727D9B23408D86996B /* ExpoModulesProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,18 +332,18 @@
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F9E38C64D73F9EF5C9AFE9A4 /* Pods-icchallenge.debug.xcconfig */;
+			baseConfigurationReference = 9FD8D533410BA17D33A67833 /* Pods-TaskManager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = icchallenge/icchallenge.entitlements;
+				CODE_SIGN_ENTITLEMENTS = TaskManager/TaskManager.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"FB_SONARKIT_ENABLED=1",
 				);
-				INFOPLIST_FILE = icchallenge/Info.plist;
+				INFOPLIST_FILE = TaskManager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -357,8 +357,8 @@
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.eliasg52.icchallenge;
-				PRODUCT_NAME = icchallenge;
-				SWIFT_OBJC_BRIDGING_HEADER = "icchallenge/icchallenge-Bridging-Header.h";
+				PRODUCT_NAME = TaskManager;
+				SWIFT_OBJC_BRIDGING_HEADER = "TaskManager/TaskManager-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -368,13 +368,13 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E3C23B41199AAF1FBB9E799E /* Pods-icchallenge.release.xcconfig */;
+			baseConfigurationReference = D6E3E117879F89B578C07FCB /* Pods-TaskManager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = icchallenge/icchallenge.entitlements;
+				CODE_SIGN_ENTITLEMENTS = TaskManager/TaskManager.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
-				INFOPLIST_FILE = icchallenge/Info.plist;
+				INFOPLIST_FILE = TaskManager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -388,8 +388,8 @@
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = com.eliasg52.icchallenge;
-				PRODUCT_NAME = icchallenge;
-				SWIFT_OBJC_BRIDGING_HEADER = "icchallenge/icchallenge-Bridging-Header.h";
+				PRODUCT_NAME = TaskManager;
+				SWIFT_OBJC_BRIDGING_HEADER = "TaskManager/TaskManager-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -523,7 +523,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "icchallenge" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "TaskManager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -532,7 +532,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "icchallenge" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "TaskManager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

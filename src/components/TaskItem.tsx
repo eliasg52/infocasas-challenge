@@ -28,13 +28,13 @@ const TaskItem: React.FC<TaskItemProps> = ({
           style={styles.editButton}
           onPress={() => onEdit(id, task)}
         >
-          <Ionicons name="pencil-outline" size={18} color="#007AFF" />
+          <Ionicons name="pencil" size={18} color="#FF6B35" />
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.deleteButton}
           onPress={() => onDelete(id)}
         >
-          <Ionicons name="trash-outline" size={18} color="#FF3B30" />
+          <Ionicons name="trash" size={18} color="#F44336" />
         </TouchableOpacity>
       </View>
     </View>
@@ -46,18 +46,18 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    padding: 16,
     backgroundColor: "white",
-    borderRadius: 8,
-    marginVertical: 4,
+    borderRadius: 12,
+    padding: 16,
+    marginVertical: 6,
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
-      height: 1,
+      height: 2,
     },
     shadowOpacity: 0.1,
-    shadowRadius: 2,
-    elevation: 2,
+    shadowRadius: 4,
+    elevation: 3,
   },
   taskContainer: {
     flex: 1,
@@ -66,22 +66,23 @@ const styles = StyleSheet.create({
     marginRight: 12,
   },
   checkbox: {
-    width: 20,
-    height: 20,
-    borderRadius: 4,
+    width: 24,
+    height: 24,
+    borderRadius: 6,
     borderWidth: 2,
-    borderColor: "#007AFF",
+    borderColor: "#FF6B35",
     marginRight: 12,
     justifyContent: "center",
     alignItems: "center",
   },
   checkboxCompleted: {
-    backgroundColor: "#007AFF",
+    backgroundColor: "#FF6B35",
   },
   taskText: {
     flex: 1,
     fontSize: 16,
     color: "#333",
+    fontWeight: "500",
   },
   taskTextCompleted: {
     textDecorationLine: "line-through",
@@ -93,13 +94,13 @@ const styles = StyleSheet.create({
   },
   editButton: {
     padding: 8,
-    borderRadius: 6,
-    backgroundColor: "#F0F8FF",
+    borderRadius: 8,
+    backgroundColor: "#FFF3E0",
   },
   deleteButton: {
     padding: 8,
-    borderRadius: 6,
-    backgroundColor: "#FFF5F5",
+    borderRadius: 8,
+    backgroundColor: "#FFEBEE",
   },
 });
 

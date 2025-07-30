@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "icchallenge.app"
-               BlueprintName = "icchallenge"
-               ReferencedContainer = "container:icchallenge.xcodeproj">
+               BuildableName = "TaskManager.app"
+               BlueprintName = "TaskManager"
+               ReferencedContainer = "container:TaskManager.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "icchallengeTests.xctest"
-               BlueprintName = "icchallengeTests"
-               ReferencedContainer = "container:icchallenge.xcodeproj">
+               BuildableName = "TaskManagerTests.xctest"
+               BlueprintName = "TaskManagerTests"
+               ReferencedContainer = "container:TaskManager.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "icchallenge.app"
-            BlueprintName = "icchallenge"
-            ReferencedContainer = "container:icchallenge.xcodeproj">
+            BuildableName = "TaskManager.app"
+            BlueprintName = "TaskManager"
+            ReferencedContainer = "container:TaskManager.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "icchallenge.app"
-            BlueprintName = "icchallenge"
-            ReferencedContainer = "container:icchallenge.xcodeproj">
+            BuildableName = "TaskManager.app"
+            BlueprintName = "TaskManager"
+            ReferencedContainer = "container:TaskManager.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

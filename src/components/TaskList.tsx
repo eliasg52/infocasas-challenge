@@ -45,9 +45,6 @@ const TaskList: React.FC<TaskListProps> = ({
       case "completed":
         filteredTasks = tasks.filter((task) => task.completed);
         break;
-      case "pending":
-        filteredTasks = tasks.filter((task) => !task.completed);
-        break;
       default:
         filteredTasks = tasks;
     }
@@ -77,12 +74,10 @@ const TaskList: React.FC<TaskListProps> = ({
     <View style={styles.emptyContainer}>
       <Text style={styles.emptyText}>
         {searchText.trim()
-          ? "No tasks found matching your search"
+          ? "No se encontraron tareas que coincidan con tu búsqueda"
           : currentFilter === "all"
-          ? "There are no tasks"
-          : currentFilter === "completed"
-          ? "No completed tasks"
-          : "No pending tasks"}
+          ? "No hay tareas"
+          : "No hay tareas completadas"}
       </Text>
     </View>
   );
@@ -127,6 +122,7 @@ const styles = StyleSheet.create({
   },
   listContainer: {
     flexGrow: 1,
+    paddingBottom: 50,
   },
   emptyContainer: {
     flex: 1,

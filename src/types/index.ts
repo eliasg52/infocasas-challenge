@@ -45,7 +45,7 @@ export interface EditTaskModalProps {
   onCancel: () => void;
 }
 
-export type FilterType = "all" | "completed" | "pending";
+export type FilterType = "all" | "completed";
 
 export interface TaskFilterProps {
   currentFilter: FilterType;

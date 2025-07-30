@@ -1,12 +1,7 @@
 import { AddTaskProps } from "@/types";
+import { Ionicons } from "@expo/vector-icons";
 import React, { useState } from "react";
-import {
-  StyleSheet,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { StyleSheet, TextInput, TouchableOpacity, View } from "react-native";
 
 const AddTask: React.FC<AddTaskProps> = ({ onAddTask }) => {
   const [taskText, setTaskText] = useState("");
@@ -20,65 +15,78 @@ const AddTask: React.FC<AddTaskProps> = ({ onAddTask }) => {
 
   return (
     <View style={styles.container}>
-      <TextInput
-        style={styles.input}
-        value={taskText}
-        onChangeText={setTaskText}
-        placeholder="Add a new task..."
-        placeholderTextColor="#999"
-      />
-      <TouchableOpacity
-        style={[styles.button, !taskText.trim() && styles.buttonDisabled]}
-        onPress={handleAddTask}
-        disabled={!taskText.trim()}
-      >
-        <Text style={styles.buttonText}>Add</Text>
-      </TouchableOpacity>
+      <View style={styles.inputContainer}>
+        <Ionicons
+          name="add-circle"
+          size={24}
+          color="#FF6B35"
+          style={styles.addIcon}
+        />
+        <TextInput
+          style={styles.input}
+          value={taskText}
+          onChangeText={setTaskText}
+          placeholder="Agregar una nueva tarea..."
+          placeholderTextColor="#999"
+        />
+        <TouchableOpacity
+          style={[styles.button, !taskText.trim() && styles.buttonDisabled]}
+          onPress={handleAddTask}
+          disabled={!taskText.trim()}
+        >
+          <Ionicons name="checkmark" size={20} color="white" />
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
+    marginBottom: 20,
+  },
+  inputContainer: {
     flexDirection: "row",
-    padding: 16,
-    gap: 12,
+    alignItems: "center",
     backgroundColor: "white",
-    borderRadius: 8,
-    marginBottom: 16,
+    borderRadius: 12,
+    paddingHorizontal: 16,
+    paddingVertical: 12,
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
-      height: 1,
+      height: 2,
     },
     shadowOpacity: 0.1,
-    shadowRadius: 2,
-    elevation: 2,
+    shadowRadius: 4,
+    elevation: 3,
+  },
+  addIcon: {
+    marginRight: 12,
   },
   input: {
     flex: 1,
-    borderWidth: 1,
-    borderColor: "#E5E5E5",
-    borderRadius: 8,
-    padding: 12,
     fontSize: 16,
-    backgroundColor: "#F8F9FA",
+    color: "#333",
+    paddingVertical: 8,
   },
   button: {
-    backgroundColor: "#007AFF",
-    paddingHorizontal: 20,
-    paddingVertical: 12,
+    backgroundColor: "#FF6B35",
+    padding: 12,
     borderRadius: 8,
-    justifyContent: "center",
-    minWidth: 60,
+    marginLeft: 12,
+    shadowColor: "#FF6B35",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
+    elevation: 2,
   },
   buttonDisabled: {
-    backgroundColor: "#E5E5E5",
-  },
-  buttonText: {
-    color: "white",
-    fontSize: 16,
-    fontWeight: "600",
+    backgroundColor: "#E0E0E0",
+    shadowOpacity: 0,
   },
 });
 

@@ -1,7 +1,7 @@
 import { TaskSearchProps } from "@/types";
 import { Ionicons } from "@expo/vector-icons";
 import React from "react";
-import { StyleSheet, TextInput, View } from "react-native";
+import { StyleSheet, TextInput, TouchableOpacity, View } from "react-native";
 
 const TaskSearch: React.FC<TaskSearchProps> = ({
   searchText,
@@ -13,24 +13,23 @@ const TaskSearch: React.FC<TaskSearchProps> = ({
         <Ionicons
           name="search"
           size={20}
-          color="#999"
+          color="#FF6B35"
           style={styles.searchIcon}
         />
         <TextInput
           style={styles.searchInput}
           value={searchText}
           onChangeText={onSearchChange}
-          placeholder="Search tasks..."
+          placeholder="Buscar tareas..."
           placeholderTextColor="#999"
         />
         {searchText.length > 0 && (
-          <Ionicons
-            name="close-circle"
-            size={20}
-            color="#999"
-            style={styles.clearIcon}
+          <TouchableOpacity
             onPress={() => onSearchChange("")}
-          />
+            style={styles.clearButton}
+          >
+            <Ionicons name="close-circle" size={20} color="#FF6B35" />
+          </TouchableOpacity>
         )}
       </View>
     </View>
@@ -46,20 +45,20 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     backgroundColor: "white",
-    borderRadius: 8,
-    paddingHorizontal: 12,
-    paddingVertical: 8,
+    borderRadius: 12,
+    paddingHorizontal: 16,
+    paddingVertical: 12,
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
-      height: 1,
+      height: 2,
     },
     shadowOpacity: 0.1,
-    shadowRadius: 2,
-    elevation: 2,
+    shadowRadius: 4,
+    elevation: 3,
   },
   searchIcon: {
-    marginRight: 8,
+    marginRight: 12,
   },
   searchInput: {
     flex: 1,
@@ -67,8 +66,9 @@ const styles = StyleSheet.create({
     color: "#333",
     paddingVertical: 4,
   },
-  clearIcon: {
+  clearButton: {
     marginLeft: 8,
+    padding: 4,
   },
 });
 
