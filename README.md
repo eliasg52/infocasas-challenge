@@ -1,16 +1,5 @@
 # 🏠 INFO CASAS CHALLENGE 🏠
 
-## Features
-
-- ✅ Add, edit, and delete tasks
-- ✅ Mark tasks as completed with visual feedback
-- ✅ Filter tasks (All, Completed)
-- ✅ Search tasks by name
-- ✅ Cross-platform support (iOS, Android, Web)
-- ✅ Local storage (AsyncStorage for mobile, localStorage for web)
-- ✅ Modern UI/UX with InfoCasas-inspired design
-- ✅ Responsive design optimized for both mobile and web
-
 ## Prerequisites
 
 - **Node.js**: Version 18.0.0 or higher (Tested with v24.1.0)
@@ -80,6 +69,17 @@ npx expo prebuild --clean
 # Then run the Android app
 npm run android
 ```
+
+## Features
+
+- ✅ Add, edit, and delete tasks
+- ✅ Mark tasks as completed with visual feedback
+- ✅ Filter tasks (All, Completed)
+- ✅ Search tasks by name
+- ✅ Cross-platform support (iOS, Android, Web)
+- ✅ Local storage (AsyncStorage for mobile, localStorage for web)
+- ✅ Modern UI/UX with InfoCasas-inspired design
+- ✅ Responsive design optimized for both mobile and web
 
 ## Key Components
 
