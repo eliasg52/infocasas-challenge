@@ -21,7 +21,7 @@ This project uses the following exact versions:
 
    ```bash
    git clone https://github.com/eliasg52/infocasas-challenge
-   cd ic-challenge
+   cd infocasas-challenge
    ```
 
 2. **Install dependencies**
