@@ -13,9 +13,18 @@
 
 ## Prerequisites
 
-- **Node.js**: Version 18.0.0 or higher
-- **npm**: Version 8.0.0 or higher
+- **Node.js**: Version 18.0.0 or higher (Tested with v24.1.0)
+- **npm**: Version 8.0.0 or higher (Tested with v11.4.2)
 - **Expo CLI**: Latest version
+
+### Project Dependencies
+
+This project uses the following exact versions:
+
+- **React**: 19.0.0
+- **React Native**: 0.79.5
+- **Expo**: ~53.0.20
+- **TypeScript**: ~5.8.3
 
 ## Installation
 

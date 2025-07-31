@@ -8,7 +8,8 @@ const useTasks = () => {
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
 
-  const apiUrl = process.env.EXPO_PUBLIC_API_URL;
+  const apiUrl =
+    process.env.EXPO_PUBLIC_API_URL || "https://dummyjson.com/todos";
 
   const isWeb = Platform.OS === "web";
 
