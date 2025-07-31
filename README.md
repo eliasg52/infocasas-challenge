@@ -43,18 +43,14 @@ This project uses the following exact versions:
 ## Running the Application
 
 ### For Web Development
-![PHOTO-2025-07-31-13-57-50](https://github.com/user-attachments/assets/4b72bf7c-6841-4492-985e-619bb2554396)
-
 
 ```bash
 npm run web
 ```
-
 The application will open in your default browser at `http://localhost:8081`
+![PHOTO-2025-07-31-13-57-50](https://github.com/user-attachments/assets/4b72bf7c-6841-4492-985e-619bb2554396)
 
 ### For iOS Development
-![PHOTO-2025-07-31-13-59-53](https://github.com/user-attachments/assets/fea4e89f-edb4-488f-801f-e049af7b1638)
-
 
 ```bash
 # First, generate native iOS files
@@ -63,10 +59,9 @@ npx expo prebuild --clean
 # Then run the iOS app
 npm run ios
 ```
+![PHOTO-2025-07-31-13-59-53](https://github.com/user-attachments/assets/fea4e89f-edb4-488f-801f-e049af7b1638)
 
 ### For Android Development
-![PHOTO-2025-07-31-14-01-50](https://github.com/user-attachments/assets/cb0c1fab-491b-4aa0-9d94-8155799566c0)
-
 
 ```bash
 # First, generate native Android files
@@ -75,6 +70,8 @@ npx expo prebuild --clean
 # Then run the Android app
 npm run android
 ```
+![PHOTO-2025-07-31-14-01-50](https://github.com/user-attachments/assets/cb0c1fab-491b-4aa0-9d94-8155799566c0)
+
 
 ## Features
 
