@@ -1,50 +1,125 @@
-# Welcome to your Expo app 👋
+# 🏠 INFO CASAS CHALLENGE 🏠
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Features
 
-## Get started
+- ✅ Add, edit, and delete tasks
+- ✅ Mark tasks as completed with visual feedback
+- ✅ Filter tasks (All, Completed)
+- ✅ Search tasks by name
+- ✅ Cross-platform support (iOS, Android, Web)
+- ✅ Local storage (AsyncStorage for mobile, localStorage for web)
+- ✅ Modern UI/UX with InfoCasas-inspired design
+- ✅ Responsive design optimized for both mobile and web
 
-1. Install dependencies
+## Prerequisites
+
+- **Node.js**: Version 18.0.0 or higher
+- **npm**: Version 8.0.0 or higher
+- **Expo CLI**: Latest version
+
+## Installation
+
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/eliasg52/infocasas-challenge
+   cd ic-challenge
+   ```
+
+2. **Install dependencies**
 
    ```bash
    npm install
    ```
 
-2. Start the app
+3. **Environment Configuration**
 
-   ```bash
-   npx expo start
+   Create a `.env` file in the root directory with the following content:
+
+   ```
+   EXPO_PUBLIC_API_URL=https://dummyjson.com/todos
    ```
 
-In the output, you'll find options to open the app in a
+   > **Note**: The `.env` file is already in `.gitignore` to keep sensitive data out of the repository.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Running the Application
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+### For Web Development
 
 ```bash
-npm run reset-project
+npm run web
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+The application will open in your default browser at `http://localhost:8081`
 
-## Learn more
+### For iOS Development
 
-To learn more about developing your project with Expo, look at the following resources:
+```bash
+# First, generate native iOS files
+npx expo prebuild --clean
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+# Then run the iOS app
+npm run ios
+```
 
-## Join the community
+### For Android Development
 
-Join our community of developers creating universal apps.
+```bash
+# First, generate native Android files
+npx expo prebuild --clean
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+# Then run the Android app
+npm run android
+```
+
+## Key Components
+
+- **AddTask**: Input component for adding new tasks
+- **TaskList**: Main list component with filtering and search
+- **TaskItem**: Individual task item with edit/delete actions
+- **TaskFilter**: Filter buttons (All, Completed)
+- **TaskSearch**: Search functionality
+- **EditTaskModal**: Modal for editing tasks
+- **useTasks**: Custom hook for task management
+
+## Technology Stack
+
+- **React Native**: Cross-platform mobile development
+- **Expo**: Development platform and tools
+- **TypeScript**: Type-safe JavaScript
+- **AsyncStorage**: Local storage for mobile
+- **localStorage**: Local storage for web
+- **Expo Linear Gradient**: Gradient backgrounds
+- **Ionicons**: Icon library
+
+## Platform-Specific Features
+
+### Web
+
+- Responsive design with max-width container
+- Visible scroll indicators
+- Larger typography and spacing
+- localStorage for data persistence
+
+### Mobile
+
+- Native mobile UI/UX
+- AsyncStorage for data persistence
+- Touch-optimized interactions
+- Platform-specific styling
+
+## Development Notes
+
+- The app automatically detects the platform and uses appropriate storage methods
+- All UI components are responsive and adapt to different screen sizes
+- The design follows modern mobile-first principles with web optimization
+- Environment variables are prefixed with `EXPO_PUBLIC_` for client-side access
+
+## Troubleshooting
+
+If you encounter issues:
+
+1. **Clear cache**: `npx expo start --clear`
+2. **Reset project**: `npm run reset-project`
+3. **Reinstall dependencies**: `rm -rf node_modules && npm install`
+4. **Regenerate native files**: `npx expo prebuild --clean`
