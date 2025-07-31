@@ -1,6 +1,7 @@
 import { TaskItemType } from "@/types";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useEffect, useState } from "react";
+import { Platform } from "react-native";
 
 const useTasks = () => {
   const [tasks, setTasks] = useState<TaskItemType[]>([]);
@@ -9,10 +10,17 @@ const useTasks = () => {
 
   const apiUrl = process.env.EXPO_PUBLIC_API_URL;
 
+  const isWeb = Platform.OS === "web";
+
   const loadStoredTasks = async (): Promise<TaskItemType[] | null> => {
     try {
-      const storedTasks = await AsyncStorage.getItem("tasks");
-      return storedTasks ? JSON.parse(storedTasks) : null;
+      if (isWeb) {
+        const storedTasks = localStorage.getItem("tasks");
+        return storedTasks ? JSON.parse(storedTasks) : null;
+      } else {
+        const storedTasks = await AsyncStorage.getItem("tasks");
+        return storedTasks ? JSON.parse(storedTasks) : null;
+      }
     } catch (error) {
       console.error("Error loading stored tasks:", error);
       return null;
@@ -25,7 +33,11 @@ const useTasks = () => {
         console.warn("Attempting to save undefined/null tasks");
         return;
       }
-      await AsyncStorage.setItem("tasks", JSON.stringify(tasks));
+      if (isWeb) {
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+      } else {
+        await AsyncStorage.setItem("tasks", JSON.stringify(tasks));
+      }
     } catch (error) {
       console.error("Error saving tasks to storage:", error);
     }
@@ -39,6 +51,7 @@ const useTasks = () => {
     }
 
     const data = await response.json();
+
     if (!data || !data.todos) {
       console.warn("API response doesn't have expected structure:", data);
       return [];
@@ -63,6 +76,7 @@ const useTasks = () => {
     };
 
     const updatedTasks = [...tasks, newTask];
+
     setTasks(updatedTasks);
     await saveTasksToStorage(updatedTasks);
   };
@@ -95,6 +109,7 @@ const useTasks = () => {
       setError(null);
 
       const storedTasks = await loadStoredTasks();
+
       if (storedTasks && storedTasks.length > 0) {
         setTasks(storedTasks);
         setLoading(false);
@@ -102,6 +117,7 @@ const useTasks = () => {
       }
 
       const apiTasks = await fetchTasksFromAPI();
+
       if (apiTasks && apiTasks.length > 0) {
         setTasks(apiTasks);
         await saveTasksToStorage(apiTasks);
